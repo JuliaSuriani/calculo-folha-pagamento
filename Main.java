@@ -7,18 +7,20 @@ class Main {
   public static void main(String[] args) {
     string nome, cargo, cpf = " ";
     float salarioBase, salarioFinal = 0;
-    float inss, fgts, irrf = 0;
+    float inss, fgts, irrf, periculosidade, insalubridade = 0;
     Scanner scan = new Scanner(System.in);
 
     System.out.println("Insira o nome do funcinário:");
-    nome = console.next();
+    nome = scan.next();
 
     System.out.println("Insira o CPF do funcinário:");
-    cpf = console.next();
+    cpf = scan.next();
 
     System.out.println("Insira o salário base do funcinário:");
-    salarioBase = console.nextFloat();
+    salarioBase = scan.nextFloat();
 
+    System.out.println("O funcionário recebe por insalubridade?");
+    cpf = scan.next();
 
   }
 }
