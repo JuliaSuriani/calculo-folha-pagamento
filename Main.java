@@ -96,8 +96,10 @@ class Main {
     System.out.format("Cargo:%d || CPF:%d\n", cargo, cpf);
     System.out.println("Salario bruto:" +salarioBase);
     System.out.println("Adicionais:");
-    System.out.format("- Periculosidade:%d  - Insalubridade:%d", periculosidade, insalubridade);
-    System.out.println("Folha de pagamento");    
+    System.out.format("- Periculosidade: %d  - Insalubridade: %d\n", periculosidade, insalubridade);
+    System.out.println("Benefícios:");
+    System.out.format("- Vale alimentação:%d  - Vale transporte:%d\n", va, vt);
+    
 
   }
 }
