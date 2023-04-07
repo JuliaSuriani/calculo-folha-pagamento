@@ -5,6 +5,7 @@ class Main {
     string nome, cargo, cpf = " ";
     float salarioBase, salarioFinal, horasTrab, jornadaSem, jornadaMensal, salarioHora  = 0;
     float vt, va, inss, fgts, irrf, periculosidade, insalubridade = 0;
+    float adicional, beneficio, desconto = 0;
     int diasTrab = 0;
     Scanner scan = new Scanner(System.in);
 
@@ -83,11 +84,20 @@ class Main {
       irrf = salarioBase * 0.225;
     } else if ( salarioBase >= 4664.69){
       irrf = salarioBase * 0.275;
-    }  
+    }
+    //calculos para o salario liquido
+    adicional = insalubridade + periculosidade;
+    beneficio = va + vt;
+    desconto =  inss + fgts + irrf;
+    salarioFinal = salarioBase + adicional - beneficio - desconto;
 
-    
-
-    
+    System.out.println("Folha de pagamento");
+    System.out.format("Dados do Funcionário: %d\n", nome);
+    System.out.format("Cargo:%d || CPF:%d\n", cargo, cpf);
+    System.out.println("Salario bruto:" +salarioBase);
+    System.out.println("Adicionais:");
+    System.out.format("- Periculosidade:%d  - Insalubridade:%d", periculosidade, insalubridade);
+    System.out.println("Folha de pagamento");    
 
   }
 }
