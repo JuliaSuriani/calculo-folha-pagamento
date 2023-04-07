@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
-    string nome, cargo, cpf = " ";
-    float salarioBase, salarioFinal, horasTrab, jornadaSem, jornadaMensal, salarioHora  = 0;
-    float vt, va, inss, fgts, irrf, periculosidade, insalubridade = 0;
-    float adicional, beneficio, desconto = 0;
+    String nome, cargo, cpf = "";
+    double salarioBase, salarioFinal, horasTrab, jornadaSem, jornadaMensal, salarioHora  = 0;
+    double vt, va, inss, fgts, irrf, periculosidade, insalubridade = 0;
+    double adicional, beneficio, desconto = 0;
     int diasTrab = 0;
     Scanner scan = new Scanner(System.in);
 
@@ -19,13 +19,13 @@ class Main {
     cargo = scan.next();
 
     System.out.println("Insira o salário base do funcionário:");
-    salarioBase = scan.nextFloat();
+    salarioBase = scan.nextDouble();
 
     System.out.println("Insira as hora diárias a serem trabalhadas:");
-    horasTrab = scan.nextFloat();
+    horasTrab = scan.nextDouble();
 
     System.out.println("Insira os dias a serem trabalhados por semana:");
-    diasTrabrab = scan.nextInt();
+    diasTrab = scan.nextInt();
 
     //calculo de salario hora 
     jornadaSem = horasTrab * diasTrab;
@@ -37,7 +37,7 @@ class Main {
     System.out.println("O funcionário recebe por insalubridade? (Responda apenas com sim ou nao)");
     temp1 = scan.next();
 
-    if (temp1 = "sim") {
+    if (temp1 == "sim") {
       insalubridade = salarioBase * 0.4;
 
     } else {
@@ -49,7 +49,7 @@ class Main {
     System.out.println("O funcionário recebe por periculosidade? (Responda apenas com sim ou nao)");
     temp2 = scan.next();
 
-    if (temp2 = "sim") {
+    if (temp2 == "sim") {
       periculosidade = salarioBase * 0.3;
 
     } else {
@@ -61,7 +61,7 @@ class Main {
     vt = salarioBase * 0.06;
 
   //calculo do INSS
-    if (salario <= 1302.00) {
+    if (salarioBase <= 1302.00) {
       inss = salarioBase * 0.075;      
     } else if (salarioBase >= 1302.01 && salarioBase <= 2571.29) {
       inss = salarioBase * 0.09;
@@ -74,7 +74,7 @@ class Main {
   fgts = salarioBase * 0.08; 
 
   //calculo do IRRF
-   if (salario <= 1903.98) {
+   if (salarioBase <= 1903.98) {
       irrf = 0;      
     } else if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
       irrf = salarioBase * 0.075;
