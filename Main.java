@@ -91,15 +91,18 @@ class Main {
     desconto =  inss + fgts + irrf;
     salarioFinal = salarioBase + adicional - beneficio - desconto;
 
+    //relatorio
     System.out.println("Folha de pagamento");
     System.out.format("Dados do Funcionário: %d\n", nome);
     System.out.format("Cargo:%d || CPF:%d\n", cargo, cpf);
     System.out.println("Salario bruto:" +salarioBase);
-    System.out.println("Adicionais:");
+    System.out.println("Adicionais:" + adicional);
     System.out.format("- Periculosidade: %d  - Insalubridade: %d\n", periculosidade, insalubridade);
-    System.out.println("Benefícios:");
+    System.out.println("Benefícios:" + beneficio);
     System.out.format("- Vale alimentação:%d  - Vale transporte:%d\n", va, vt);
-    
+    System.out.println("Descontos:" + desconto);
+    System.out.format("- INSS: %d - FGTS:%d - IRRF:%d\n", inss, fgts, irrf);
+    System.out.println("Salário líquido:" +salarioFinal);
 
   }
 }
