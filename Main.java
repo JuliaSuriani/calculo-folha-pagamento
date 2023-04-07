@@ -19,8 +19,21 @@ class Main {
     System.out.println("Insira o salário base do funcinário:");
     salarioBase = scan.nextFloat();
 
+    //falta inserir o calculo de salario hora
+
     System.out.println("O funcionário recebe por insalubridade?");
     cpf = scan.next();
+
+    var temp = " ";
+    System.out.println("O funcionário recebe por periculosidade? (Responda apenas com sim ou nao)");
+    temp = scan.next();
+
+    if (temp = "sim") {
+      periculosidade = salarioBase * 0.3;
+
+    } else {
+      periculosidade = 0;
+    }
 
   }
 }
