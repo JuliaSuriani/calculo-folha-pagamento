@@ -1,39 +1,93 @@
 import java.util.Scanner;
 
 class Main {
-  static final int vt = 0.06; // vale transporte desconto de 6%
-  static final int va = 0.2; // vale alimentação desconto de 20%
-
   public static void main(String[] args) {
     string nome, cargo, cpf = " ";
-    float salarioBase, salarioFinal = 0;
-    float inss, fgts, irrf, periculosidade, insalubridade = 0;
+    float salarioBase, salarioFinal, horasTrab, jornadaSem, jornadaMensal, salarioHora  = 0;
+    float vt, va, inss, fgts, irrf, periculosidade, insalubridade = 0;
+    int diasTrab = 0;
     Scanner scan = new Scanner(System.in);
 
-    System.out.println("Insira o nome do funcinário:");
+    System.out.println("Insira o nome do funcionário:");
     nome = scan.next();
 
-    System.out.println("Insira o CPF do funcinário:");
+    System.out.println("Insira o CPF do funcionário:");
     cpf = scan.next();
 
-    System.out.println("Insira o salário base do funcinário:");
+    System.out.println("Insira o cargo do funcionário:");
+    cargo = scan.next();
+
+    System.out.println("Insira o salário base do funcionário:");
     salarioBase = scan.nextFloat();
 
-    //falta inserir o calculo de salario hora
+    System.out.println("Insira as hora diárias a serem trabalhadas:");
+    horasTrab = scan.nextFloat();
 
-    System.out.println("O funcionário recebe por insalubridade?");
-    cpf = scan.next();
+    System.out.println("Insira os dias a serem trabalhados por semana:");
+    diasTrabrab = scan.nextInt();
 
-    var temp = " ";
+    //calculo de salario hora 
+    jornadaSem = horasTrab * diasTrab;
+    jornadaMensal = jornadaSem * 4;
+    salarioHora = salarioBase / jornadaMensal;
+    
+    //calculo de insalubridade = 40%
+    var temp1 = " ";
+    System.out.println("O funcionário recebe por insalubridade? (Responda apenas com sim ou nao)");
+    temp1 = scan.next();
+
+    if (temp1 = "sim") {
+      insalubridade = salarioBase * 0.4;
+
+    } else {
+      insalubridade = 0;
+    }
+
+    //calculo de periculosidade = 30%
+    var temp2 = " ";
     System.out.println("O funcionário recebe por periculosidade? (Responda apenas com sim ou nao)");
-    temp = scan.next();
+    temp2 = scan.next();
 
-    if (temp = "sim") {
+    if (temp2 = "sim") {
       periculosidade = salarioBase * 0.3;
 
     } else {
       periculosidade = 0;
     }
+    
+  //calculo de beneficios (VA & VT)
+    va = salarioBase * 0.2;
+    vt = salarioBase * 0.06;
+
+  //calculo do INSS
+    if (salario <= 1302.00) {
+      inss = salarioBase * 0.075;      
+    } else if (salarioBase >= 1302.01 && salarioBase <= 2571.29) {
+      inss = salarioBase * 0.09;
+    } else if ( salarioBase >= 2571.30 && salarioBase <= 3856.94){
+      inss = salarioBase * 0.12;
+    } else if ( salarioBase >= 3856.95 && salarioBase <= 7507.49){
+      inss = salarioBase * 0.14;
+    } 
+  //calculo do FGTS 8%
+  fgts = salarioBase * 0.08; 
+
+  //calculo do IRRF
+   if (salario <= 1903.98) {
+      irrf = 0;      
+    } else if (salarioBase >= 1903.99 && salarioBase <= 2826.65) {
+      irrf = salarioBase * 0.075;
+    } else if ( salarioBase >= 2826.66 && salarioBase <= 3751.05){
+      irrf = salarioBase * 0.15;
+    } else if ( salarioBase >= 3751.06 && salarioBase <= 4664.68){
+      irrf = salarioBase * 0.225;
+    } else if ( salarioBase >= 4664.69){
+      irrf = salarioBase * 0.275;
+    }  
+
+    
+
+    
 
   }
 }
