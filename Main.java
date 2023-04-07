@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
+    double inss, fgts, irrf = 0;
     String nome, cargo, cpf = "";
     double salarioBase, salarioFinal, horasTrab, jornadaSem, jornadaMensal, salarioHora  = 0;
-    double vt, va, inss, fgts, irrf, periculosidade, insalubridade = 0;
+    double vt, va, periculosidade, insalubridade = 0;
     double adicional, beneficio, desconto = 0;
     int diasTrab = 0;
     Scanner scan = new Scanner(System.in);
